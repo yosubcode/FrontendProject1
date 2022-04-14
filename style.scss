@@ -14,15 +14,83 @@ $color3 : #416274;
 $color4 : #659ab2;
 $color5 : #8eddfa;
 $color6 : #ffa600;
+$color7 : #ffe2ca;
+$colorwhite: white;
 $font : 'Source Sans Pros';
 
 
 body {
-    background-color: white;
+    background-color: $colorwhite;
+    margin: 0;
+}
+
+.container {
+    width: 100%;
+    display: grid;
+    height: auto;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 4fr 3fr 3fr;
+    grid-template-areas: 
+    "nav nav nav nav"
+    "content1 content1 content1 content1"
+    "content2 content2 content3 content3";
+    grid-gap: 0.1rem;
+    font-weight: 100;
+
+}   
+.nav {
+    background-color: $color1;
+    grid-area: nav;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .navlogo {
+        padding: 24px;
+        i {
+            color: $color6;
+
+        }
+        a {
+            color: $colorwhite;
+            text-decoration: none;
+        }
+    }
+    .navmenu {
+        display: flex;
+        li{
+            padding: 8px 24px;
+            list-style : none;
+            a{
+                text-decoration: none;
+                color: $colorwhite;
+            }
+        }
+    }
+    .navcontact{
+        padding: 8px 24px;
+        li{
+            list-style: none;
+            a {
+                color: $colorwhite;
+                text-decoration: none;
+            }
+        }
+    }
+    .navbar {
+        display: none;
+        i{
+            color: $color6;
+        }
+    }
+    
 }
 
 .content1 {
+    padding: 8px 24px;
+    grid-area: content1;
     display: block;
+    background-color: $color7;
+    text-align: left;
     h1 {
         color: $color1;
     }
@@ -31,5 +99,52 @@ body {
     }
     p{
         color: grey;
+    }
+}
+
+.content2 {
+    padding: 8px 24px;
+    grid-area: content2;
+    background-color: $color3;
+    h2{
+        color: $colorwhite;
+    }
+    h1{
+        color: $colorwhite;
+    }
+    p{
+        color: grey;
+    }
+    button {
+        background-color: $color6;
+        color: $colorwhite;
+    }
+
+}
+
+.content3 {
+    padding: 8px 24px;
+    grid-area: content3;
+    background-color: $color4;
+    h2{
+        color: $colorwhite;
+    }
+    p{
+        color: $colorwhite;
+    }
+
+}
+
+
+
+@media screen and (max-width : 850px) {
+    .container {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 4fr 3fr 3fr;
+        grid-template-areas: 
+        "nav"
+        "content1"
+        "content2"
+        "content3";
     }
 }
