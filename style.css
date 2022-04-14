@@ -11,28 +11,31 @@
 body {
   background-color: white;
   margin: 0;
+  padding: 0;
 }
 
 .container {
   width: 100%;
   display: -ms-grid;
   display: grid;
-  height: auto;
-  -ms-grid-columns: 1fr 1fr 1fr 1fr;
-      grid-template-columns: 1fr 1fr 1fr 1fr;
-  -ms-grid-rows: 1fr 4fr 3fr 3fr;
-      grid-template-rows: 1fr 4fr 3fr 3fr;
-      grid-template-areas: "nav nav nav nav" "content1 content1 content1 content1" "content2 content2 content3 content3";
-  grid-gap: 0.1rem;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  -ms-grid-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  -ms-grid-rows: 0.7fr 8fr 6fr 6fr;
+      grid-template-rows: 0.7fr 8fr 6fr 6fr;
+      grid-template-areas: "navigation navigation navigation navigation navigation navigation navigation navigation" "content1 content1 content1 content1 content1 content1 content1 content1" ". content2 content2 content2 content3 content3 content3 .";
+  grid-gap: 0rem;
   font-weight: 100;
 }
 
-.nav {
+.navigation {
   background-color: #020d15;
   -ms-grid-row: 1;
   -ms-grid-column: 1;
-  -ms-grid-column-span: 4;
-  grid-area: nav;
+  -ms-grid-column-span: 8;
+  grid-area: navigation;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -44,103 +47,118 @@ body {
           align-items: center;
 }
 
-.nav .navlogo {
+.navigation .navlogo {
   padding: 24px;
 }
 
-.nav .navlogo i {
+.navigation .navlogo i {
+  cursor: pointer;
   color: #ffa600;
 }
 
-.nav .navlogo a {
+.navigation .navlogo a {
   color: white;
   text-decoration: none;
 }
 
-.nav .navmenu {
+.navigation .navmenu {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
 }
 
-.nav .navmenu li {
+.navigation .navmenu li {
   padding: 8px 24px;
   list-style: none;
 }
 
-.nav .navmenu li a {
+.navigation .navmenu li a {
   text-decoration: none;
   color: white;
 }
 
-.nav .navmenu li:hover {
+.navigation .navmenu li:hover {
   background-color: #8eddfa;
   border-radius: 5px;
   -webkit-transition: 500ms;
   transition: 500ms;
 }
 
-.nav .navmenu li:hover a {
+.navigation .navmenu li:hover a {
   color: #020d15;
 }
 
-.nav .navcontact {
+.navigation .navcontact {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   padding: 8px 24px;
 }
 
-.nav .navcontact i {
+.navigation .navcontact i {
   padding: 0px 8px;
   color: #ffa600;
 }
 
-.nav .navcontact li {
+.navigation .navcontact li {
   list-style: none;
 }
 
-.nav .navcontact li a {
+.navigation .navcontact li a {
   color: white;
   text-decoration: none;
 }
 
-.nav .navbar {
+.navigation .navbar {
   display: none;
 }
 
-.nav .navbar i {
+.navigation .navbar i {
   color: #ffa600;
 }
 
 .content1 {
-  padding: 8px 24px;
   -ms-grid-row: 2;
   -ms-grid-column: 1;
-  -ms-grid-column-span: 4;
+  -ms-grid-column-span: 8;
   grid-area: content1;
-  display: block;
-  background-color: #ffe2ca;
-  text-align: left;
+  background-image: url("./img/nature.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
-.content1 h1 {
-  color: #020d15;
+.content1 .content1-box {
+  max-width: 500px;
+  text-align: center;
 }
 
-.content1 h2 {
-  color: green;
+.content1 .content1-box h1 {
+  color: white;
 }
 
-.content1 p {
-  color: grey;
+.content1 .content1-box h2 {
+  color: #8eddfa;
+}
+
+.content1 .content1-box p {
+  color: #ffe2ca;
 }
 
 .content2 {
-  padding: 8px 24px;
+  padding: 24px 24px;
   -ms-grid-row: 3;
-  -ms-grid-column: 1;
-  -ms-grid-column-span: 2;
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 3;
   grid-area: content2;
   background-color: #416274;
 }
@@ -154,19 +172,24 @@ body {
 }
 
 .content2 p {
-  color: grey;
+  color: #d3d3d3;
 }
 
 .content2 button {
+  width: 10rem;
+  height: 5rem;
+  border-radius: 5px;
+  border-style: none;
+  font-size: 20px;
   background-color: #ffa600;
   color: white;
 }
 
 .content3 {
-  padding: 8px 24px;
+  padding: 24px 24px;
   -ms-grid-row: 3;
-  -ms-grid-column: 3;
-  -ms-grid-column-span: 2;
+  -ms-grid-column: 5;
+  -ms-grid-column-span: 3;
   grid-area: content3;
   background-color: #659ab2;
 }
@@ -183,27 +206,58 @@ body {
   .container {
     -ms-grid-columns: 1fr;
         grid-template-columns: 1fr;
-    -ms-grid-rows: 1fr 4fr 3fr 3fr;
-        grid-template-rows: 1fr 4fr 3fr 3fr;
-        grid-template-areas: "nav" "content1" "content2" "content3";
+    -ms-grid-rows: 0.1fr 1.5fr 1.5fr 1.5fr;
+        grid-template-rows: 0.1fr 1.5fr 1.5fr 1.5fr;
+        grid-template-areas: "navigation" "content1" "content2" "content3";
   }
-  .nav {
+  .navigation {
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
+    grid-area: navigation;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
   }
-  .nav .navmenu {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
+  .navigation .navmenu {
+    display: none;
+    width: 100%;
   }
-  .navbar {
-    padding: 24px;
+  .navigation .navmenu li {
+    margin: 0px 10px;
+    text-align: center;
+  }
+  .navigation .navcontact {
+    display: none;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    width: 96%;
+    padding: 20px 0;
+  }
+  .navigation .navbar {
+    margin: 12px;
+    padding: 12px 12px;
+    display: block;
+    position: absolute;
+    right: 0px;
+    cursor: pointer;
+  }
+  .navigation .navcontact.active {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
+    background-color: #020d15;
+  }
+  .navigation .navmenu.active {
+    display: block;
+    background-color: #020d15;
+  }
+  .content1 {
+    padding: 15px;
   }
 }
 /*# sourceMappingURL=style.css.map */
