@@ -1,0 +1,35 @@
+:root {
+    --color1:  #020d15;
+    --color2:  #223340;
+    --color3:  #416274;
+    --color4:  #659ab2;
+    --color5:  #8eddfa;
+    --color6:  #ffa600;
+    --font: 'Source Sans Pros';
+}
+
+$color1 : #020d15;
+$color2 : #223340;
+$color3 : #416274;
+$color4 : #659ab2;
+$color5 : #8eddfa;
+$color6 : #ffa600;
+$font : 'Source Sans Pros';
+
+
+body {
+    background-color: white;
+}
+
+.content1 {
+    display: block;
+    h1 {
+        color: $color1;
+    }
+    h2 {
+        color: green;
+    }
+    p{
+        color: grey;
+    }
+}

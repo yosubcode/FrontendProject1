@@ -1,0 +1,30 @@
+:root {
+  --color1:  #020d15;
+  --color2:  #223340;
+  --color3:  #416274;
+  --color4:  #659ab2;
+  --color5:  #8eddfa;
+  --color6:  #ffa600;
+  --font: 'Source Sans Pros';
+}
+
+body {
+  background-color: white;
+}
+
+.content1 {
+  display: block;
+}
+
+.content1 h1 {
+  color: #020d15;
+}
+
+.content1 h2 {
+  color: green;
+}
+
+.content1 p {
+  color: grey;
+}
+/*# sourceMappingURL=style.css.map */
